@@ -1,0 +1,55 @@
+{
+	"info": {
+		"_postman_id": "a6623380-433a-42ba-9b5c-7f14e024536c",
+		"name": "WebApiAuthenticationDemo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "WeatherForecast/auth/basic",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic cm91bmR0aGVjb2RlOnJvdW5kdGhlY29kZQ==",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44309/WeatherForecast/auth/basic",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44309",
+					"path": [
+						"WeatherForecast",
+						"auth",
+						"basic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WeatherForecast",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44309/WeatherForecast",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44309",
+					"path": [
+						"WeatherForecast"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

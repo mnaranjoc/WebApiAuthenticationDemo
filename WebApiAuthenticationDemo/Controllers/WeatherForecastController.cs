@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApiAuthenticationDemo.Attributes;
 
 namespace WebApiAuthenticationDemo.Controllers
 {
@@ -29,6 +30,7 @@ namespace WebApiAuthenticationDemo.Controllers
             return GetWeather();
         }
 
+        [BasicAuthorization]
         [HttpGet]
         [Route("auth/basic")]
         public IEnumerable<WeatherForecast> BasicAuth()
