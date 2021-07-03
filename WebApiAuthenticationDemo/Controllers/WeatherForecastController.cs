@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -45,6 +46,7 @@ namespace WebApiAuthenticationDemo.Controllers
             return GetWeather();
         }
 
+        [Authorize]
         [HttpGet]
         [Route("auth/bearertoken")]
         public IEnumerable<WeatherForecast> BearerToken()

@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApiAuthenticationDemo.Extensions;
 using WebApiAuthenticationDemo.Schemes;
 
 namespace WebApiAuthenticationDemo
@@ -36,6 +37,7 @@ namespace WebApiAuthenticationDemo
             {
                 options.AddPolicy("BasicAuthentication", new AuthorizationPolicyBuilder("BasicAuthentication").RequireAuthenticatedUser().Build());
             });
+            services.AddTokenAuthentication(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,7 +51,7 @@ namespace WebApiAuthenticationDemo
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

@@ -6,6 +6,25 @@
 	},
 	"item": [
 		{
+			"name": "WeatherForecast",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44309/WeatherForecast",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44309",
+					"path": [
+						"WeatherForecast"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "WeatherForecast/auth/basic",
 			"request": {
 				"method": "GET",
@@ -33,19 +52,47 @@
 			"response": []
 		},
 		{
-			"name": "WeatherForecast",
+			"name": "GetBearerToken",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://localhost:44309/WeatherForecast",
+					"raw": "https://localhost:44309/api/token",
 					"protocol": "https",
 					"host": [
 						"localhost"
 					],
 					"port": "44309",
 					"path": [
-						"WeatherForecast"
+						"api",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WeatherForecast/auth/bearertoken",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZha2VAZW1haWwuY29tIiwibmJmIjoxNjI1MzM5MjUzLCJleHAiOjE2MjU0MjU2NTMsImlhdCI6MTYyNTMzOTI1M30.3yBBpE395KLHy5_jPP_iRdOP-tS7BJ3Gbe3sxA2oCwo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44309/WeatherForecast/auth/bearertoken",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44309",
+					"path": [
+						"WeatherForecast",
+						"auth",
+						"bearertoken"
 					]
 				}
 			},
